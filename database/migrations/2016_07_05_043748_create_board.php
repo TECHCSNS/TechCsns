@@ -15,7 +15,7 @@ class CreateBoard extends Migration
         //
         Schema::create('boards',function (Blueprint $table){
         $table->increments('id')->unique();
-        $table->integer('user_id')->unsigned()->unique();
+        $table->string('user_id')->unique;
         $table->string('title');
         $table->timestamps();
         });

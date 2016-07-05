@@ -21,3 +21,7 @@ Route::get('test','ArticlesController@index');
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+
+
+Route::get('/board','board_controller@index');
