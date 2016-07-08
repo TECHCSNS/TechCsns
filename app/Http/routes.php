@@ -25,3 +25,7 @@ Route::get('/home', 'HomeController@index');
 
 
 Route::get('/board','board_controller@index');
+Route::get('/newthread',function(){
+    return view('board.newthread');
+});
+Route::post('createthread','board_controller@create');

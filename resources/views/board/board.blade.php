@@ -3,10 +3,10 @@
 <div class="container">
   <div class="rows">
     <ul class="nav nav-tabs col-xs-12">
-      <li class="active"><a href="board.html">注目</a></li>
+      <li class="active"><a href="{{ url('board') }}">注目</a></li>
       <li><a href="boardTop.html">トップ</a></li>
       <li><a href="boardNew.html">新着</a></li>
-      <a href="newThread.html" class="btn btn-info pull-right">投稿する</a>
+      <a href="{{  url('newthread') }}" class="btn btn-info pull-right">投稿する</a>
     </ul>
     <div id="threadList col-xs-12">
     @foreach($boards as $board) 

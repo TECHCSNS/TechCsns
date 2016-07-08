@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBoard extends Migration
+class CreateBoardComments extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateBoard extends Migration
     public function up()
     {
         //
-        Schema::create('boards',function (Blueprint $table){
+        Schema::create('boardcomments',function (Blueprint $table){
         $table->increments('id')->unique();
         $table->string('user_id')->unique();
-        $table->string('title');
-        $table->string('body');
+        $table->string('board_id');
+        $table->string('comments');
         $table->timestamps();
         });
         
@@ -31,6 +31,6 @@ class CreateBoard extends Migration
     public function down()
     {
         //
-        Schema::drop('boards');
+        Schema::drop('boardcomments');
     }
 }
