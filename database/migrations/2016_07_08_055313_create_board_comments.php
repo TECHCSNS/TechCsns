@@ -15,7 +15,7 @@ class CreateBoardComments extends Migration
         //
         Schema::create('boardcomments',function (Blueprint $table){
         $table->increments('id')->unique();
-        $table->string('user_id')->unique();
+        $table->string('user_id');
         $table->string('board_id');
         $table->string('comments');
         $table->timestamps();

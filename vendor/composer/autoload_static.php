@@ -776,6 +776,7 @@ class ComposerStaticInit45f3ee3cdf7bcea2cc1c35755c90d26f
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
         'TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
+        'UserProfiles' => __DIR__ . '/../..' . '/database/migrations/2016_07_12_042947_UserProfiles.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

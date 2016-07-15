@@ -17,9 +17,9 @@
           <p class="down">↓</p>
         </div>
         <div class="threadInfo col-xs-11">
-          <p  class="title"><a href="thread.html">{{ $board->title }}</a></p>
+          <p  class="title"><a href="/board/{{ $board->id }}">{{ $board->title }}</a></p>
           <p class="prv">{{ $board->body }}</p>
-          <p class="threadSub">コメント：0  <a href="#" class="contributor">{{ $board->user_id }}</a>2016/01/01 00:00</p>
+          <p class="threadSub">コメント：0  <a href="#" class="contributor">{{ $board->user_id }}</a>{{ $board->created_at }}</p>
           <p class="threadSub tag">タグ</p>
       </div>
       @endforeach

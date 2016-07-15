@@ -16,16 +16,30 @@
 Route::get('/', function () {
 	return view('welcome');
 });
-Route::get('test','ArticlesController@index');
+Route::get('test',function(){
+return Input::all();
+});
 
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
-
-
-Route::get('/board','board_controller@index');
+//////////////////////////////////////////test
+Route::get('/test', function(){
+   return \Auth::user(); 
+});
+//////////////////////////////////////////board
 Route::get('/newthread',function(){
     return view('board.newthread');
 });
-Route::post('createthread','board_controller@create');
+
+Route::get('/board','board_controller@index');
+
+Route::post('/storethread','board_controller@storethread');
+
+Route::post('/createthreadcomment','board_controller@createthreadcomment');
+
+Route::get('/board/{id}','board_controller@showthread');
+
+
+

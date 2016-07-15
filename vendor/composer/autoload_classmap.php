@@ -518,4 +518,5 @@ return array(
     'SebastianBergmann\\Version' => $vendorDir . '/sebastian/version/src/Version.php',
     'TestCase' => $baseDir . '/tests/TestCase.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
+    'UserProfiles' => $baseDir . '/database/migrations/2016_07_12_042947_UserProfiles.php',
 );
