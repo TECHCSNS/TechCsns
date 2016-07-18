@@ -11,19 +11,15 @@
     <div id="threadList col-xs-12">
     @foreach($boards as $board) 
       <div class="thread clearfix">
-        <div class="vote col-xs-1  text-center">
-          <p class="up">↑</p>
-          <p class="score">1000</p>
-          <p class="down">↓</p>
-        </div>
+      
         <div class="threadInfo col-xs-11">
           <p  class="title"><a href="/board/{{ $board->id }}">{{ $board->title }}</a></p>
           <p class="prv">{{ $board->body }}</p>
           <p class="threadSub">コメント：0  <a href="#" class="contributor">{{ $board->user_id }}</a>{{ $board->created_at }}</p>
           <p class="threadSub tag">タグ</p>
-      </div>
+        </div>
       @endforeach
-    </div>
+      </div>
   </div>
 </div>
 @endsection

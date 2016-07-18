@@ -17,6 +17,10 @@ class Boardcomment extends Model
     {
         return $this->hasOne('App\Board');
     }
+    public function boardcommentvote()
+    {
+        return $this->hasMany('App\Boardcommentvote');
+    }
     
    
 }

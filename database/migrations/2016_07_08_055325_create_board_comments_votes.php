@@ -16,7 +16,7 @@ class CreateBoardCommentsVotes extends Migration
         Schema::create('boardcommentvotes',function (Blueprint $table){
         $table->increments('id')->unique();
         $table->string('user_id');
-        $table->string('comment_id');
+        $table->string('boardcomment_id');
         $table->integer('vote');
         $table->timestamps();
         });

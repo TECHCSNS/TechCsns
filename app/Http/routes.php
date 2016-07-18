@@ -41,5 +41,6 @@ Route::post('/createthreadcomment','board_controller@createthreadcomment');
 
 Route::get('/board/{id}','board_controller@showthread');
 
+Route::post('/comments/{id}/storevote','board_controller@storevote');
 
-
+Route::get('/like','board_controller@likecomment');
