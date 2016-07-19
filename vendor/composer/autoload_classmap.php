@@ -2715,5 +2715,6 @@ return array(
     'phpDocumentor\\Reflection\\Types\\Static_' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Static_.php',
     'phpDocumentor\\Reflection\\Types\\String_' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/String_.php',
     'phpDocumentor\\Reflection\\Types\\This' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/This.php',
+    'phpDocumentor\\Reflection\\Types\\Void_' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Void_.php',
     'Userprofiles' => $baseDir . '/database/migrations/2016_07_12_042947_UserProfiles.php',
 );
