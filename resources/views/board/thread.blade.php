@@ -20,17 +20,16 @@
                <input type="hidden" name="user_id" value="{{ Auth::user()['id'] }}">
                <input type="hidden" name="boardcomment_id" value="{{ $boards->id }}">
                <input type="hidden" name="vote" value="">
-               <button>Like</button>
+                <button>Like</button>
+                  
+                    
                <?php $votes=0; ?>
                @foreach($comments->boardcommentvote as $vote)
-                <?php $votes = $votes +1; ?>
-                
-                
+                    <?php $votes = $votes +1; ?>
+                   
                @endforeach
-               {{ $votes }}Like
-              
-               <br>
                
+               {{ $votes }}Like
              </form>
          @endforeach
                

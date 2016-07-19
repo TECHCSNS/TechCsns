@@ -29,11 +29,10 @@ Route::get('/test', function(){
    return \Auth::user(); 
 });
 //////////////////////////////////////////board
-Route::get('/newthread',function(){
-    return view('board.newthread');
-});
 
 Route::get('/board','board_controller@index');
+
+Route::get('/newthread','board_controller@newthreadindex');
 
 Route::post('/storethread','board_controller@storethread');
 

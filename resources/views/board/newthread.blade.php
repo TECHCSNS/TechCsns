@@ -6,11 +6,7 @@
           <h2>新規投稿</h2>
         </div>
         
-        @if (Auth::user()['id'] == "")
-          <script type="text/javascript">
-            window.location = "{{ url('/login')}}";
-          </script>
-        @else
+         
           <form action="{{ url('storethread') }}" method="post">
             {{ csrf_field() }}
             <input type="hidden" name="user_id" value="{{ Auth::user()['id'] }}">
@@ -19,7 +15,7 @@
             <p>タグ</p><p><input type="text"></p>
             <p><button type="submit">送信</button></p>
           </form>
-        @endif
+          
       </div>
 </div>
 @endsection
