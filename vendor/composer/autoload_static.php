@@ -270,8 +270,6 @@ class ComposerStaticInit45f3ee3cdf7bcea2cc1c35755c90d26f
     );
 
     public static $classMap = array (
-<<<<<<< HEAD
-=======
         'App\\Article' => __DIR__ . '/../..' . '/app/Article.php',
         'App\\Console\\Commands\\Inspire' => __DIR__ . '/../..' . '/app/Console/Commands/Inspire.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
@@ -319,7 +317,6 @@ class ComposerStaticInit45f3ee3cdf7bcea2cc1c35755c90d26f
         'Collective\\Html\\HtmlBuilder' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlBuilder.php',
         'Collective\\Html\\HtmlFacade' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlFacade.php',
         'Collective\\Html\\HtmlServiceProvider' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlServiceProvider.php',
->>>>>>> 04944039e4735271bfbbb5f25d396e13c02d691d
         'CreateArticlesTable' => __DIR__ . '/../..' . '/database/migrations/2016_06_28_075334_create_articles_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateTweetsTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_05_062047_create_tweets_table.php',
