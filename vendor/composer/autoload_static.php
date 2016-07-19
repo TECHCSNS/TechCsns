@@ -318,6 +318,10 @@ class ComposerStaticInit45f3ee3cdf7bcea2cc1c35755c90d26f
         'Collective\\Html\\HtmlFacade' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlFacade.php',
         'Collective\\Html\\HtmlServiceProvider' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlServiceProvider.php',
         'CreateArticlesTable' => __DIR__ . '/../..' . '/database/migrations/2016_06_28_075334_create_articles_table.php',
+        'CreateBoard' => __DIR__ . '/../..' . '/database/migrations/2016_07_05_043748_create_board.php',
+        'CreateBoardComments' => __DIR__ . '/../..' . '/database/migrations/2016_07_08_055313_create_board_comments.php',
+        'CreateBoardCommentsVotes' => __DIR__ . '/../..' . '/database/migrations/2016_07_08_055325_create_board_comments_votes.php',
+        'CreateForeignToBoard' => __DIR__ . '/../..' . '/database/migrations/2016_07_19_060040_create_foreign_to_board.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateTweetsTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_05_062047_create_tweets_table.php',
         'CreateUserProfilesTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_18_184852_create_user_profiles_table.php',
@@ -2976,6 +2980,7 @@ class ComposerStaticInit45f3ee3cdf7bcea2cc1c35755c90d26f
         'phpDocumentor\\Reflection\\Types\\String_' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/String_.php',
         'phpDocumentor\\Reflection\\Types\\This' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/This.php',
         'phpDocumentor\\Reflection\\Types\\Void_' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/Void_.php',
+        'Userprofiles' => __DIR__ . '/../..' . '/database/migrations/2016_07_12_042947_UserProfiles.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

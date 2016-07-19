@@ -36,3 +36,17 @@ Route::post('/tweet', 'TweetController@post');
 Route::delete('/tweet/{tweet}', 'TweetController@destroy');
 
 Route::get('/timelime', 'TimeLineController@index');
+
+Route::get('/board','board_controller@index');
+
+Route::get('/newthread','board_controller@newthreadindex');
+
+Route::post('/storethread','board_controller@storethread');
+
+Route::post('/createthreadcomment','board_controller@createthreadcomment');
+
+Route::get('/board/{id}','board_controller@showthread');
+
+Route::post('/comments/{id}/storevote','board_controller@storevote');
+
+Route::get('/like','board_controller@likecomment');

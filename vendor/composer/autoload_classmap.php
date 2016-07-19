@@ -54,6 +54,10 @@ return array(
     'Collective\\Html\\HtmlFacade' => $vendorDir . '/laravelcollective/html/src/HtmlFacade.php',
     'Collective\\Html\\HtmlServiceProvider' => $vendorDir . '/laravelcollective/html/src/HtmlServiceProvider.php',
     'CreateArticlesTable' => $baseDir . '/database/migrations/2016_06_28_075334_create_articles_table.php',
+    'CreateBoard' => $baseDir . '/database/migrations/2016_07_05_043748_create_board.php',
+    'CreateBoardComments' => $baseDir . '/database/migrations/2016_07_08_055313_create_board_comments.php',
+    'CreateBoardCommentsVotes' => $baseDir . '/database/migrations/2016_07_08_055325_create_board_comments_votes.php',
+    'CreateForeignToBoard' => $baseDir . '/database/migrations/2016_07_19_060040_create_foreign_to_board.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreateTweetsTable' => $baseDir . '/database/migrations/2016_07_05_062047_create_tweets_table.php',
     'CreateUserProfilesTable' => $baseDir . '/database/migrations/2016_07_18_184852_create_user_profiles_table.php',
@@ -2711,5 +2715,5 @@ return array(
     'phpDocumentor\\Reflection\\Types\\Static_' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Static_.php',
     'phpDocumentor\\Reflection\\Types\\String_' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/String_.php',
     'phpDocumentor\\Reflection\\Types\\This' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/This.php',
-    'phpDocumentor\\Reflection\\Types\\Void_' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Void_.php',
+    'Userprofiles' => $baseDir . '/database/migrations/2016_07_12_042947_UserProfiles.php',
 );
