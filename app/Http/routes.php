@@ -21,3 +21,9 @@ Route::get('test','ArticlesController@index');
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/tweet', 'TweetController@index');
+Route::post('/tweet', 'TweetController@post');
+Route::delete('/tweet/{tweet}', 'TweetController@destroy');
+
+
