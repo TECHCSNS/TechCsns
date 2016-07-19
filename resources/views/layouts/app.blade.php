@@ -37,16 +37,12 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse"　id="myNavbar">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-<<<<<<< HEAD
-                    <li><a href="{{ url('/home') }}">Home</a></li>
-                    <li><a href="{{ url('/tweet') }}">Tweet</a></li>
-                    <li><a href="{{ url('/timeline') }}">TL</a></li>
-=======
                     <li><a href="{{ url('/home') }}">マイページ</a></li>
+                    <li><a href="{{ url('/timeline') }}">TL</a></li>
                     <li><a href="#">掲示板</a></li>
+                    <li><a href="{{ url('/tweet') }}">Tweet</a></li>
                     <li><a href="#">日記</a></li>
                     <li><a href="#">メッセージ</a></li>
->>>>>>> b7d49d5a27a2a6ced0eaa7a22585a53a6ec26a48
                 </ul>
        
                 <!-- Right Side Of Navbar -->
