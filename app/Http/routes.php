@@ -13,11 +13,10 @@
 
 //migrate --force
 
-Route::get('/', function () {
-	return view('welcome');
-});
+Route::get('/', 'HomeController@indexTimeLine');
+
+Route::get('/home', 'HomeController@index');
+					 
 Route::get('test','ArticlesController@index');
 
 Route::auth();
-
-Route::get('/home', 'HomeController@index');
