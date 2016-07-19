@@ -21,7 +21,13 @@ Route::get('test','ArticlesController@index');
 
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/admin','ArticlesController@indexAdmin');
+Route::get('/create','ArticlesController@create');
+Route::post('/admin','ArticlesController@store');
+Route::delete('/{id}','ArticlesController@destroy');
+
+Route::get('/index','ArticlesController@index');
+Route::get('/{id}','ArticlesController@show');
 
 Route::get('/tweet', 'TweetController@index');
 
