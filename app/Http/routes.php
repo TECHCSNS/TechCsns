@@ -26,4 +26,4 @@ Route::get('/tweet', 'TweetController@index');
 Route::post('/tweet', 'TweetController@post');
 Route::delete('/tweet/{tweet}', 'TweetController@destroy');
 
-
+Route::get('/timelime', 'TimeLineController@index');
