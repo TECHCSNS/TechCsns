@@ -13,8 +13,8 @@ class CreateArticlesTable extends Migration
     public function up()
     {
         Schema::create('articles',function (Blueprint $table){
-            $table->increments('id')->unique();
-            $table->integer('user_id')->unsigned()->unique();
+            $table->increments('id');
+            $table->integer('user_id')->unsigned();
             $table->string('title');
             $table->text('body');
             $table->timestamps();
