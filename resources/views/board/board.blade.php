@@ -1,5 +1,5 @@
-@extends('board.default')
-@section('board_content')
+@extends('layouts.app')
+@section('content')
 <div class="container">
   <div class="rows">
     <ul class="nav nav-tabs col-xs-12">
