@@ -16,10 +16,21 @@
 Route::get('/', 'HomeController@indexTimeLine');
 
 Route::get('/home', 'HomeController@index');
+Route::get('/home/{id}', 'HomeController@profile');
+
 					 
 Route::get('test','ArticlesController@index');
 
 Route::auth();
+//userprofile
+Route::get('/userprofile', 'User_profileController@index');
+Route::post('/userprofile', 'User_profileController@edit');
+//userprofile-end
+
+//follow
+Route::post('follow', 'FollowController@follow');
+Route::post('unfollow', 'FollowController@unfollow');
+//follow-end
 
 Route::get('/tweet', 'TweetController@index');
 
@@ -49,3 +60,4 @@ Route::post('/create','ArticlesController@store');
 Route::get('/index','ArticlesController@index');
 Route::delete('/destroy/{id}','ArticlesController@destroy');
 Route::get('/{id}','ArticlesController@show');
+

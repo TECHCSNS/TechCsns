@@ -40,8 +40,8 @@ class ArticlesController extends Controller
        
         return redirect('/admin');
     }
-
-
+    
+    
     public function edit($id)//一覧→編集
     {
         //

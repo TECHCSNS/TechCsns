@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading">ユーザープロフィール</div>
+                <div class="panel-heading">ユーザープロフィール<a href="/userprofile">編集</a></div>
 
                   <div class="panel-body">
                     <div class="row">
@@ -16,10 +16,24 @@
                         <div class="col-md-8">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <h2><ruby>大木<rp>(</rp><rt>オオギ</rt><rp>)</rp> 裕介<rp>(</rp><rt>ユウスケ</rt><rp>)</rp></ruby></h2>
+                                    <h2><ruby>{{ $user_profile->name or '未登録' }}<rp>(</rp><rt>{{ $user_profile->katakana_name or '未登録' }}</rt><rp>)</rp></ruby></h2>
                                 </div>
                                 <div class="col-md-6">
-                                    <button class="btn btn-default">フォロー</button>
+                                   @if (isset($user_profile) && $followFlag )
+                                        <form class="form-horizontal" method="POST" action="{{ url('/unfollow') }}">
+                                            {{ csrf_field() }}
+                                            <input type="hidden" name="user_id" value="{{ $auth_user or '' }}">
+                                            <input type="hidden" name="follow_id" value="{{ $user_profile->id or '0'}}">
+                                            <button type="submit" class="btn btn-default">フォロー解除</button>
+                                        </form>
+                                    @elseif (isset($user_profile)&& $auth_user != $user_profile->id)
+                                        <form class="form-horizontal" method="POST" action="{{ url('/follow') }}">
+                                            {{ csrf_field() }}
+                                            <input type="hidden" name="user_id" value="{{ $auth_user or '' }}">
+                                            <input type="hidden" name="follow_id" value="{{ $user_profile->id or '0'}}">
+                                            <button type="submit" class="btn btn-default">フォロー</button>
+                                        </form>
+                                    @endif
                                 </div>
                             </div>
 
