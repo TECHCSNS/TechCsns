@@ -24,8 +24,21 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
     
+    
+     /**
+     * ユーザーのポストを取得
+     */
     public function articles()
     {
         return $this->hasMany(Article::class);
+    }
+    
+    
+    /**
+     * ユーザーのコメントを取得
+     */
+    public function article_comments()
+    {
+        return $this->hasMany(ArticleComment::class);
     }
 }
