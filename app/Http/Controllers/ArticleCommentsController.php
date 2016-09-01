@@ -11,7 +11,7 @@ class ArticleCommentsController extends Controller
 {
     public function __construct()
     {
-        $this->middleware("auth",["only"=>["index"]]);
+        $this->middleware("auth",["only"=>["index", "store"]]);
     }
     
     
@@ -26,7 +26,7 @@ class ArticleCommentsController extends Controller
     }
 
 
-    //閲覧者用
+    //admin
     
     public function index(Request $request)
     {
@@ -34,12 +34,6 @@ class ArticleCommentsController extends Controller
         return view('articles.comments', compact('comments'));
     }
     
-    
-    public function show(Request $request)
-    {
-        //$comments = ArticleComment::where('article_id', $request->id)->get();
-        //return view('articles.detail', compact('comments'));
-    }
     
     
     public function destroy($id){
