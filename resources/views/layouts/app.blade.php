@@ -41,8 +41,21 @@
                     <li><a href="{{ url('/timeline') }}">TL</a></li>
                     <li><a href="#">掲示板</a></li>
                     <li><a href="{{ url('/tweet') }}">Tweet</a></li>
+<<<<<<< HEAD
                     <li><a href="#">日記</a></li>
                     <li><a href="#">メッセージ</a></li>
+=======
+<<<<<<< HEAD
+                    <li><a href="{{ url('/create') }}">日記</a></li>
+                    <li><a href="{{ url('/index') }}">ブログ</a></li>
+                    <li><a href="{{ url('article/admin') }}">Admin</a></li>
+                    <li><a href="{{ url('article/index/1') }}">User1</a></li>
+                    <li><a href="{{ url('article/index/2') }}">User2</a></li>
+=======
+                    <li><a href="#">日記</a></li>
+                    <li><a href="#">メッセージ</a></li>
+>>>>>>> parent of 833cc92... update
+>>>>>>> ff7620bf74d5bc782a02da5877e45bf00d9ec99a
                 </ul>
        
                 <!-- Right Side Of Navbar -->

@@ -9,9 +9,15 @@ class Article extends Model
     protected $table = 'articles';
     
     protected $fillable = ['title', 'body', 'published_at'];
+
+
+	public function user(){
+		// 投稿は1つのユーザーに属する
+		return $this->belongsTo('User','user_id');
+	}
     
-    public function user()
+    public function article_comments()
     {
-        return $this->belongsTo(User::class);
+        return $this->hasMany(ArticleComment::class);
     }
 }

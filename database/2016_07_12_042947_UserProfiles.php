@@ -12,7 +12,6 @@ class Userprofiles extends Migration
      */
     public function up()
     {
-        //
         Schema::create('userprofiles',function (Blueprint $table){
         
             $table->increments('id')->unique();
