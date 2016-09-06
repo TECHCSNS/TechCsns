@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\ArticleComment;
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use DB;
+//use DB;
 
 class ArticlesController extends Controller
 {
@@ -18,9 +19,9 @@ class ArticlesController extends Controller
     //投稿者用
     
     
-    public function indexAdmin()
+    public function indexAdmin(Request $request)
     {
-        $articles = Article::all();
+        $articles = Article::where('user_id', $request->user()->id)->orderBy('created_at', 'desc')->get();
         return view('articles.admin',compact('articles'));
     }
     
@@ -38,19 +39,26 @@ class ArticlesController extends Controller
             'body' => $request->body,
         ]);
        
-        return redirect('/admin');
+        return redirect('article/admin');
     }
     
     
     public function edit($id)//一覧→編集
     {
-        //
+        $article = Article::findOrFail($id);
+        
+        return view('articles.edit', compact('article'));
     }
 
 
     public function update(Request $request, $id)//編集→編集保存
     {
-        //
+        $article = Article::findOrFail($id);
+        $article->title = $request->title;
+        $article->body  = $request->body;
+        $article->save();
+ 
+        return redirect('article/admin');
     }
 
     
@@ -58,23 +66,24 @@ class ArticlesController extends Controller
     {
         $article = Article::findOrFail($id);
         $article->delete();
-        return redirect('/admin');
+        return redirect('article/admin');
     }
     
     
     
     //閲覧者用
     
-    public function index()
+    public function index($id)
     {
-        $articles = Article::all();
+        $articles = Article::where('user_id', $id)->orderBy('created_at', 'desc')->get();
         return view('articles.index', compact('articles'));
     }
     
     
-    public function show($id)
+    public function show(Request $request, $id)
     {
         $article = Article::findOrFail($id);
-        return view('articles.detail', compact('article'));
+        $comments = ArticleComment::where('article_id', $request->id)->orderBy('created_at', 'desc')->get();
+        return view('articles.detail', compact('article', 'comments'));
     }
 }

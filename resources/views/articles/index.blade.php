@@ -7,12 +7,13 @@
             
             <h1>記事一覧</h1>
             
-            <ul class="list-group col-">
+            <ul class="list-group">
                 @foreach($articles as $article)
                 <li class="list-group-item">
                     <div>
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                         <h2><a href="{{ url('/', $article->id) }}">{{ $article->title }}</a></h2>
+                        <h2><a href="{{ url('article', $article->id) }}">{{ $article->title }}</a></h2>
                         <ul class="list-inline">
                                 <li>投稿日：</li>
                                 <li>{{ $article->created_at }}</li>

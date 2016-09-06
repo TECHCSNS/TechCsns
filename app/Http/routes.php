@@ -54,6 +54,20 @@ Route::post('/comments/{id}/storevote','board_controller@storevote');
 
 Route::get('/like','board_controller@likecomment');
 
+Route::get('article/admin','ArticlesController@indexAdmin');
+Route::get('article/create','ArticlesController@create');
+Route::post('article/create','ArticlesController@store');
+Route::get('article/edit/{id}', 'ArticlesController@edit');
+Route::patch('article/edit/{id}', 'ArticlesController@update');
+Route::delete('article/destroy/{id}','ArticlesController@destroy');
+
+Route::get('article/index/{id}','ArticlesController@index');
+Route::get('article/{id}','ArticlesController@show');
+
+Route::get('article/admin/comments/{id}','ArticleCommentsController@index');
+Route::post('article/comment/create/{id}','ArticleCommentsController@store');
+Route::delete('article/comment/destroy/{id}','ArticleCommentsController@destroy');
+
 Route::get('/admin','ArticlesController@indexAdmin');
 Route::get('/create','ArticlesController@create');
 Route::post('/create','ArticlesController@store');

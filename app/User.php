@@ -34,9 +34,22 @@ class User extends Authenticatable
         return $this->hasMany(Tweet::class);
     }  
     
+    
+     /**
+     * ユーザーのポストを取得
+     */
     public function articles()
     {
         return $this->hasMany(Article::class);
     }
-
+    
+    
+    /**
+     * ユーザーのコメントを取得
+     */
+    public function article_comments()
+    {
+        return $this->hasMany(ArticleComment::class);
+    }
+    
 }

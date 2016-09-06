@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<link rel="stylesheet" type="text/css" href="css/article.css">
+<link href="{{{asset('/assets/css/article.css')}}}" rel="stylesheet">
 
 <div class="container">
     <div class="row">
@@ -45,17 +45,53 @@
             
             
             <!-- paging -->
-            <ul class="pagination">
-                <li><a href="#">PREV</a></li>
-                <li><a href="#">NEXT</a></li>
-            </ul>
+            <div class="text-center">
+                <ul class="pagination ">
+                    <li><a href="#">PREV</a></li>
+                    <li><a href="#">NEXT</a></li>
+                </ul>
+            </div>
             <!-- end paging -->
             
             <!-- comment -->
-            <div class="comment">
-                <p class="comment_num"></p>
-                <p class="comment_body"></p>
-                <p class="comment_author"></p>
+            <div class="comments_list">
+                
+                <h4>Comment List</h4>
+                <a href="#comment_create">コメントする</a>
+                
+                <div class="comment">
+                    <ul class="list-group">
+                        @foreach($comments as $comment)
+                        <li class="list-group-item">
+                            <p class="comment_body">{{ $comment->body }}</p>
+                            <ul class="list-inline">
+                                <li>投稿日：</li>
+                                <li>{{ $comment->created_at }}</li>
+                            </ul>
+                        </li>
+                        @endforeach
+                    </ul>
+                </div>
+                
+                <div id="comment_create">
+                    <form action="{{ url('article/comment/create', $article->id) }}" method="POST">
+                    {{ csrf_field() }}
+                    
+                    <input name="article_id" type="hidden" value="{{ $article->id }}">
+                    
+                    <div class="form-group col-xs-12">
+                        <label for="body" class"controll-label">Comment</label>
+                        
+                        <div class="post_content">
+                            <textarea id="body" name="body" class="form-controll col-xs-8" rows="5"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group col-xs-12">
+                        <button type="submit" class="btn btn-info" >Post</botton>
+                    </div>
+                </form>
+                </div>
             </div>
             <!-- end comment -->
         </div>

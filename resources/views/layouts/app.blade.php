@@ -43,6 +43,9 @@
                     <li><a href="{{ url('/tweet') }}">Tweet</a></li>
                     <li><a href="{{ url('/create') }}">日記</a></li>
                     <li><a href="{{ url('/index') }}">ブログ</a></li>
+                    <li><a href="{{ url('article/admin') }}">Admin</a></li>
+                    <li><a href="{{ url('article/index/1') }}">User1</a></li>
+                    <li><a href="{{ url('article/index/2') }}">User2</a></li>
                 </ul>
        
                 <!-- Right Side Of Navbar -->
