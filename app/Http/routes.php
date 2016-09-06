@@ -21,13 +21,21 @@ Route::get('test','ArticlesController@index');
 
 Route::auth();
 
+Route::get('/admin','ArticlesController@indexAdmin');
+Route::get('/create','ArticlesController@create');
+Route::post('/admin','ArticlesController@store');
+Route::delete('/{id}','ArticlesController@destroy');
+
+Route::get('/index','ArticlesController@index');
+Route::get('/{id}','ArticlesController@show');
+
 Route::get('/tweet', 'TweetController@index');
 
 Route::post('/tweet', 'TweetController@post');
 
 Route::delete('/tweet/{tweet}', 'TweetController@destroy');
 
-Route::get('/timeline', 'TimeLineController@index');
+Route::get('/timelime', 'TimeLineController@index');
 
 Route::get('/board','board_controller@index');
 
@@ -42,10 +50,3 @@ Route::get('/board/{id}','board_controller@showthread');
 Route::post('/comments/{id}/storevote','board_controller@storevote');
 
 Route::get('/like','board_controller@likecomment');
-
-Route::get('/admin','ArticlesController@indexAdmin');
-Route::get('/create','ArticlesController@create');
-Route::post('/create','ArticlesController@store');
-Route::get('/index','ArticlesController@index');
-Route::delete('/destroy/{id}','ArticlesController@destroy');
-Route::get('/{id}','ArticlesController@show');

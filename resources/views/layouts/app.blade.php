@@ -39,10 +39,10 @@
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">マイページ</a></li>
                     <li><a href="{{ url('/timeline') }}">TL</a></li>
-                    <li><a href="{{ url('/board') }}">掲示板</a></li>
+                    <li><a href="#">掲示板</a></li>
                     <li><a href="{{ url('/tweet') }}">Tweet</a></li>
-                    <li><a href="{{ url('/create') }}">日記</a></li>
-                    <li><a href="{{ url('/index') }}">ブログ</a></li>
+                    <li><a href="#">日記</a></li>
+                    <li><a href="#">メッセージ</a></li>
                 </ul>
        
                 <!-- Right Side Of Navbar -->
