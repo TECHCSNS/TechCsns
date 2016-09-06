@@ -11,7 +11,6 @@
                 @foreach($articles as $article)
                 <li class="list-group-item">
                     <div>
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                         <h2><a href="{{ url('/', $article->id) }}">{{ $article->title }}</a></h2>
                         <h2><a href="{{ url('article', $article->id) }}">{{ $article->title }}</a></h2>
                         <ul class="list-inline">
