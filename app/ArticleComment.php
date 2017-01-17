@@ -6,22 +6,26 @@ use Illuminate\Database\Eloquent\Model;
 
 class ArticleComment extends Model
 {
-    protected $table = 'article_comments';
-    
-    protected $fillable = ['article_id', 'body'];
-    
-    
+    //
+    protected $fillable = [
+        'comment','article_id'
+    ];
+
     /**
-     * このコメントを所有するユーザーを取得
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
      */
-    public function user()
-    {
-        return $this->belongsTo('User','user_id');
-    }
-
-
+    protected $hidden = [
+    ];
+    
     public function article()
     {
-        return $this->belongsTo('Article','article_id');
+        return $this->belongsTo('App\Article');
+    }
+    
+    public function user()
+    {
+        return $this->belongsTo('App\User');
     }
 }

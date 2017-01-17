@@ -5,20 +5,21 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">登録</div>
-                <div class="panel-body">
+                <div class="panel-heading">Register</div>
+                <div class="panel-body panel-back">
+                    <div class="panel-trans">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('user_name') ? ' has-error' : '' }}">
-                            <label for="user_name" class="col-md-4 control-label">Name</label>
+                        <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
+                            <label for="username" class="col-md-4 control-label">Username</label>
 
                             <div class="col-md-6">
-                                <input id="user_name" type="text" class="form-control" name="user_name" value="{{ old('user_name') }}">
+                                <input id="username" type="text" class="form-control" name="username" value="{{ old('name') }}">
 
-                                @if ($errors->has('user_name'))
+                                @if ($errors->has('username'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('user_name') }}</strong>
+                                        <strong>{{ $errors->first('username') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -74,6 +75,7 @@
                             </div>
                         </div>
                     </form>
+                    </div>
                 </div>
             </div>
         </div>

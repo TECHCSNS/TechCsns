@@ -1,6 +1,136 @@
 .panel > .panel-heading {
     background-image: none;
-    background-color: ;
     background-color: #2E2E2E;
-    color: #8D8D8D;
+    color: white;
+    /*border:transparent;*/
+}
+
+.panel-default {
+    border-color: black;
+}
+
+.navbar-brand {
+  padding-left: 30px; /* firefox bug fix */
+}
+
+.navbar-brand>img {
+  height: 100%; /* firefox bug fix */
+  width: auto;
+}
+
+#gradient{
+    z-index: -1;
+    background: linear-gradient(160deg, #2771ae, #040d41);
+    /*background: linear-gradient(145deg, #304d7f, #2b6378, #236553, #2b6378, #2a426c, #2b6378, #236553);*/
+    /*background: linear-gradient(145deg, #172b4e, #3f6489, #38778e, #3b6b7d, #3f6489);*/
+    
+    height: 100%;
+    width: 100%;
+  	display: block;
+  	position: fixed;
+  	top: 0;
+    background-size: 100% 100%;
+    
+    /*-webkit-animation: AnimationName 50s ease infinite;
+    -moz-animation: AnimationName 50s ease infinite;
+    animation: AnimationName 50s ease infinite;*/
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:5% 0%}
+    50%{background-position:96% 100%}
+    100%{background-position:5% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:5% 0%}
+    50%{background-position:96% 100%}
+    100%{background-position:5% 0%}
+}
+@keyframes AnimationName { 
+    0%{background-position:5% 0%}
+    50%{background-position:96% 100%}
+    100%{background-position:5% 0%}
+}
+
+/*profileEdit*/
+.vresize {
+  resize: vertical; 
+}
+
+.font_si{
+    font-size: 150%;
+    font-weight: bold;
+}
+.white_p {
+    color:white;
+    font-size: 135%;
+    font-weight: bold;
+}
+
+.head_content{
+    color:#e22f2f;
+    font-size: 145%;
+    font-weight: bold;
+    line-height: 1.6;
+    width: auto;
+}
+
+.box_size{
+    height:auto; 
+    width:405px;
+}
+
+.panel-back{
+    background-image:url("../img/techcsd.png");
+}
+
+.panel-trans{
+    background:rgba(255,255,255,0.7);
+    padding: 10px;
+}
+
+.panel-trans > h2{
+    margin-top: 0;
+}
+
+.overflow-wrap{
+    overflow-wrap: break-word;
+}
+
+.blog {
+    background-color: transparent;
+    border:transparent;
+}
+
+.noleft {
+    padding-left: 0;
+}
+
+.noright {
+    padding-right: 0;
+}
+
+/* Extra small devices (phones, up to 480px) */
+@media screen and (max-width: 767px) {
+    p.resp{
+        font-size: 60%;
+    }
+}
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+    p.resp{
+        font-size: 60%;
+    }
+}
+/* tablets/desktops and up ----------- */
+@media (min-width: 992px) and (max-width: 1199px) {
+    p.resp{
+        font-size: 60%;
+    }
+}
+/* large desktops and up ----------- */
+@media screen and (min-width: 1200px) {
+    p.resp{
+        font-size: 60%;
+    }
 }

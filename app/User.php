@@ -12,7 +12,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'user_name', 'email', 'password',
+        'username', 'email', 'password',
     ];
 
     /**
@@ -23,33 +23,93 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-    public function user_profile()
+    
+    public function profile()
     {
-    return $this->belongsTo('App\User_profile', 'user_id');
-        
+        return $this->hasOne('App\Profile');
+    }
+    
+    public function articles()
+    {
+        return $this->hasMany('App\Article');
+    }
+    
+    public function article_comments()
+    {
+        return $this->hasMany('App\ArticleComment');
     }
     
     public function tweets()
     {
-        return $this->hasMany(Tweet::class);
-    }  
-    
-    
-     /**
-     * ユーザーのポストを取得
-     */
-    public function articles()
-    {
-        return $this->hasMany(Article::class);
+        return $this->hasMany('App\Tweet');
     }
     
-    
-    /**
-     * ユーザーのコメントを取得
-     */
-    public function article_comments()
+    public function tweet_comments()
     {
-        return $this->hasMany(ArticleComment::class);
+        return $this->hasMany('App\TweetComment');
     }
     
+    public function followers()
+    {
+        return $this->belongsToMany(
+            self::class, 
+            'follows',
+            'followee_id',
+            'follower_id'
+        );
+    }
+    
+    public function followees()
+    {
+        return $this->belongsToMany(
+            self::class,
+            'follows',
+            'follower_id',
+            'followee_id'
+        );
+    }
+    
+    public function from_user()
+    {
+        return $this->belongsToMany(
+            self::class,
+            'messages',
+            'from_id',
+            'to_id',
+            'message',
+            'img',
+            'thumbnail'
+        );
+    }
+    
+    public function to_user()
+    {
+        return $this->belongsToMany(
+            self::class,
+            'messages',
+            'to_id',
+            'from_id',
+            'message',
+            'img',
+            'thumbnail'
+        );
+    }
+    
+    public function isAdminManager()
+    {
+        if(\Auth::User()->profile->permission == 0){
+            return true;
+        }
+        
+        return false;
+    }
+    
+    public function isTeacher()
+    {
+        if(\Auth::User()->profile->permission == 1){
+            return true;
+        }
+        
+        return false;
+    }
 }

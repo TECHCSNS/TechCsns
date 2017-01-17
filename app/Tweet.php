@@ -7,12 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 class Tweet extends Model
 {
     //
-    protected $table = 'tweets';
-    protected $fillable = ['body'];
-    
+    protected $fillable = [
+        'tweet', 'img', 'thumbnail',
+    ];
     
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo('App\User');
+    }
+    
+    public function tweet_comments()
+    {
+        return $this->hasMany('App\TweetComment');
     }
 }

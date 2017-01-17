@@ -5,9 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 
-use App\User_profile;
-use App\Follow;
-
+use App\Article;
+use DB;
+use App\User;
+use App\Tweet;
 
 class HomeController extends Controller
 {
@@ -18,7 +19,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware("auth",["only" => "index"]); 
+        $this->middleware('auth');
     }
 
     /**
@@ -29,36 +30,26 @@ class HomeController extends Controller
     public function index()
     {
         $user = \Auth::user();
-        if($user->user_id == ""){
-            return view('home');
-        }else{
-            $auth_user = $user->user_profile()->first()->id;
-            $user_profile = $user->user_profile()->first();
-        }
-
-        return view('home', ['user_profile' => $user_profile, 'auth_user' => $auth_user]);
+        return view('home',compact('user'));
     }
     
-    public function profile($id)
-    {
-        $user = \Auth::user();
-        $auth_user = $user->user_profile()->first()->id;
-        if($user->user_id == ""){
-            return redirect('home');
-        }else{
-            if($id == $user->user_id){
-                $user_profile = $user->user_profile()->first();
-            }else{
-                $user_profile = User_profile::findOrFail($id);
-            }
-        }
-        $followFlag = Follow::where('user_id', $auth_user)->where('follow_id', $user_profile->id)->exists();
-        return view('home', ['user_profile' => $user_profile, 'auth_user' => $auth_user, 'followFlag' => $followFlag]);
-    }
-
-    
-     public function indexTimeLine()
-    {
-        return view('welcome');
+    public function timeline()
+    {   
+        DB::connection()->enableQueryLog();
+        
+        $profile = \Auth::user()->profile;
+        
+        $tweets = Tweet::all();
+        
+        $articles = Article::orderBy('updated_at','desc')->paginate(5);
+        
+        //$log = DB::getQueryLog();
+        
+        $profiles = User::has('profile')->get();
+        
+        //print_r($log);
+        //exit();
+        
+        return view('timeline',compact('profile','articles','tweets','profiles'));
     }
 }
